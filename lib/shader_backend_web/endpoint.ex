@@ -2,6 +2,15 @@ defmodule ShaderBackendWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :shader_backend
   require Logger
 
+  # Add logging to see what configuration we receive
+  def init(config) do
+    Logger.info("=== Endpoint init called ===")
+    Logger.info("Config: #{inspect(config)}")
+    Logger.info("HTTP config: #{inspect(config[:http])}")
+    Logger.info("Server config: #{inspect(config[:server])}")
+    {:ok, config}
+  end
+
   # ---- CORS configuration ----
   origins = case System.get_env("MIX_ENV") do
     "prod" -> ["*"]  # Allow all origins in production
