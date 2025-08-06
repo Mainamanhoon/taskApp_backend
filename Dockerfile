@@ -35,16 +35,17 @@ RUN mix compile
 RUN mix release
 
 # app image
-FROM alpine:3.21.4 as app
-
+FROM alpine:3.21.4 AS app
 RUN apk add --no-cache libstdc++ openssl ncurses-libs
 
 WORKDIR /app
-
-ENV LANG=C.UTF-8
-ENV REPLACE_OS_VARS=true
-ENV MIX_ENV=prod
-
 COPY --from=build /app/_build/prod/rel/shader_backend ./
 
-CMD ["bin/shader_backend", "start"]
+ENV LANG=en_US.UTF-8 \
+    LC_CTYPE=en_US.UTF-8 \
+    HOME=/app \
+    MIX_ENV=prod \
+    PHX_SERVER=true \
+    PORT=${PORT}
+
+CMD ["./bin/shader_backend", "start"]
