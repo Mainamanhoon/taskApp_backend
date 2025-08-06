@@ -7,11 +7,7 @@ config :shader_backend, ShaderBackendWeb.Endpoint,
   secret_key_base: "cLjJ48UeaFb3+vj4HOFtj4r8SmV/UIXemKwwLsK3vpuruHuKEs8jM8c6F2KnEfpH",
   server: false
 
-# In test we don't send emails
-config :shader_backend, ShaderBackend.Mailer, adapter: Swoosh.Adapters.Test
 
-# Disable swoosh api client as it is only required for production adapters
-config :swoosh, :api_client, false
 
 # Print only warnings and errors during test
 config :logger, level: :warning
