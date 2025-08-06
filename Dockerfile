@@ -22,9 +22,9 @@ RUN mix deps.get --only prod
 RUN mix deps.compile
 
 # build assets
-COPY assets assets
-RUN cd assets && npm install && npm run deploy
-RUN mix phx.digest
+# COPY assets assets
+# RUN cd assets && npm install && npm run deploy
+# RUN mix phx.digest
 
 # build project
 COPY lib lib
