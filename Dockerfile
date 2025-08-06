@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 
-FROM hexpm/elixir:1.14.5-erlang-26.2.5-alpine-3.18 as build
+FROM hexpm/elixir:1.14.5-erlang-26.2.5-alpine as build
 
 # install build dependencies
 RUN apk add --no-cache build-base npm git
