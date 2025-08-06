@@ -2,5 +2,6 @@
 builder = "railpack"
 
 [deploy]
+startCommand = "bin/shader_backend mix phx.server"
 restartPolicyType = "on_failure"
 restartPolicyMaxRetries = 10
