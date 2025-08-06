@@ -7,8 +7,9 @@ defmodule ShaderBackend.ShaderGenerator do
 
   @spec generate(String.t()) :: {:ok, String.t()} | {:error, String.t()}
   def generate(description) when is_binary(description) do
-    # Try to get API key from environment variable first, then from config file
-    key = System.get_env("GEMINI_API_KEY") || get_api_key_from_config()
+    # Get API key from environment variable
+    key = System.get_env("GEMINI_API_KEY") ||
+      raise "GEMINI_API_KEY environment variable is required"
 
     prompt = "Generate a new fragment shader based on this prompt: \"#{description}\"."
 
@@ -303,35 +304,5 @@ Create a shader that matches the user's description precisely and behaves realis
     |> String.trim()
   end
 
-  # Read API key from config/env.example file
-  defp get_api_key_from_config() do
-    config_path = Path.join([File.cwd!(), "config", "env.example"])
 
-    case File.read(config_path) do
-      {:ok, content} ->
-        # Parse the file to find GEMINI_API_KEY
-        lines = String.split(content, "\n")
-        api_key_line = Enum.find(lines, fn line ->
-          String.starts_with?(String.trim(line), "GEMINI_API_KEY=")
-        end)
-
-        case api_key_line do
-          nil ->
-            Logger.error("GEMINI_API_KEY not found in #{config_path}")
-            raise "Set GEMINI_API_KEY env var or add it to config/env.example"
-          line ->
-            # Extract the API key value
-            case String.split(line, "=", parts: 2) do
-              ["GEMINI_API_KEY", value] -> String.trim(value)
-              _ ->
-                Logger.error("Invalid GEMINI_API_KEY format in #{config_path}")
-                raise "Invalid GEMINI_API_KEY format in config/env.example"
-            end
-        end
-
-      {:error, reason} ->
-        Logger.error("Could not read #{config_path}: #{reason}")
-        raise "Set GEMINI_API_KEY env var or ensure config/env.example exists"
-    end
-  end
 end
