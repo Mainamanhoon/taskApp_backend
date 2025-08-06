@@ -4,9 +4,12 @@ defmodule ShaderBackend.Application do
   @moduledoc false
 
   use Application
+  require Logger
 
   @impl true
   def start(_type, _args) do
+    Logger.info("Starting ShaderBackend application...")
+
     children = [
        {Phoenix.PubSub, name: ShaderBackend.PubSub},
       # Start the Finch HTTP client for sending emails
@@ -20,7 +23,14 @@ defmodule ShaderBackend.Application do
     # See https://hexdocs.pm/elixir/Supervisor.html
     # for other strategies and supported options
     opts = [strategy: :one_for_one, name: ShaderBackend.Supervisor]
-    Supervisor.start_link(children, opts)
+    case Supervisor.start_link(children, opts) do
+      {:ok, pid} ->
+        Logger.info("ShaderBackend application started successfully")
+        {:ok, pid}
+      {:error, reason} ->
+        Logger.error("Failed to start ShaderBackend application: #{inspect(reason)}")
+        {:error, reason}
+    end
   end
 
   # Tell Phoenix to update the endpoint configuration

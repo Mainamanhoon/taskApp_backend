@@ -1,5 +1,6 @@
 defmodule ShaderBackendWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :shader_backend
+  require Logger
 
   # ---- CORS configuration ----
   origins = case System.get_env("MIX_ENV") do

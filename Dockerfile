@@ -49,4 +49,4 @@ ENV LANG=en_US.UTF-8 \
     PORT=${PORT}
 
 # Start the application
-CMD ["./bin/shader_backend", "start"]
+CMD ["sh", "-c", "echo '=== Starting Application ===' && echo 'Environment variables:' && env | grep -E '(PORT|MIX_ENV|PHX_SERVER|SECRET_KEY_BASE)' && echo '=== Starting shader_backend ===' && ./bin/shader_backend start 2>&1"]

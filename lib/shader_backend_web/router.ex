@@ -7,6 +7,9 @@ defmodule ShaderBackendWeb.Router do
     plug :accepts, ["json"]
   end
 
+  # Health check endpoint
+  get "/health", ShaderBackendWeb.HealthController, :check
+
   scope "/api", ShaderBackendWeb do
     pipe_through :api
     post "/generate_shader", ShaderController, :create
