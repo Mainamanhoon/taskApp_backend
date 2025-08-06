@@ -1,7 +1,6 @@
 [build]
-builder = "railpack"
+builder = "nixpacks"
 
 [deploy]
-startCommand = "bin/backend mix phx.server"
 restartPolicyType = "on_failure"
 restartPolicyMaxRetries = 10
