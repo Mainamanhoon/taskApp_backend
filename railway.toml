@@ -2,6 +2,5 @@
 builder = "railpack"
 
 [deploy]
-startCommand = "bin/shader_backend start"
 restartPolicyType = "on_failure"
 restartPolicyMaxRetries = 10
