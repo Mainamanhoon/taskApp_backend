@@ -48,4 +48,4 @@ ENV LANG=en_US.UTF-8 \
     PHX_SERVER=true \
     PORT=${PORT}
 
-CMD ["./bin/shader_backend", "start"]
+CMD ["sh", "-c", "ls -l ./bin && ./bin/shader_backend start"]
