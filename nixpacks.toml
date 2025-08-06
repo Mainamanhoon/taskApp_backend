@@ -18,9 +18,8 @@ cmds = [
 
 [phases.build]
 cmds = [
-  'mix compile',
-  'mix assets.deploy'       # Phoenix ≥1.7; remove if not using it
+  'mix compile'
 ]
 
 [start]
-cmd = 'mix phx.server'
+cmd = 'PHX_SERVER=true mix phx.server'
