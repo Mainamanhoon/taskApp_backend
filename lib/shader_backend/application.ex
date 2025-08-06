@@ -15,21 +15,6 @@ defmodule ShaderBackend.Application do
     Logger.info("MIX_ENV: #{System.get_env("MIX_ENV")}")
     Logger.info("PHX_SERVER: #{System.get_env("PHX_SERVER")}")
 
-    # Manually configure endpoint for production if runtime.exs is not working
-    if System.get_env("MIX_ENV") == "prod" do
-      Logger.info("=== Manually configuring endpoint for production ===")
-      port = String.to_integer(System.get_env("PORT") || "4000")
-      secret_key_base = System.get_env("SECRET_KEY_BASE")
-
-      Logger.info("Setting endpoint config - port: #{port}")
-
-      Application.put_env(:shader_backend, ShaderBackendWeb.Endpoint,
-        http: [ip: {0, 0, 0, 0}, port: port],
-        server: true,
-        secret_key_base: secret_key_base
-      )
-    end
-
     children = [
        {Phoenix.PubSub, name: ShaderBackend.PubSub},
       # Start the Finch HTTP client for sending emails

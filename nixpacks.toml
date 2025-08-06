@@ -1,13 +1,9 @@
-# dual-interface-app/backend/nixpacks.toml  ← place it beside mix.exs
+# nixpacks.toml
 [variables]
 MIX_ENV = 'prod'
 
-[phases.setup]              # System packages that Nixpacks must install
-nixPkgs = [
-  'elixir',                 # <- missing! installs Mix, Hex, etc.
-  'erlang',                 # BEAM VM
-  'nodejs'                  # only if you use esbuild/Tailwind assets
-]
+[phases.setup]
+nixPkgs = ['elixir', 'erlang']
 
 [phases.install]
 cmds = [
@@ -22,4 +18,4 @@ cmds = [
 ]
 
 [start]
-cmd = 'PHX_SERVER=true mix phx.server'
+cmd = "mix phx.server"
