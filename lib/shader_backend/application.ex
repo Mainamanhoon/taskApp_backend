@@ -10,6 +10,11 @@ defmodule ShaderBackend.Application do
   def start(_type, _args) do
     Logger.info("Starting ShaderBackend application...")
 
+    # Check environment variables
+    Logger.info("PORT: #{System.get_env("PORT")}")
+    Logger.info("MIX_ENV: #{System.get_env("MIX_ENV")}")
+    Logger.info("PHX_SERVER: #{System.get_env("PHX_SERVER")}")
+
     children = [
        {Phoenix.PubSub, name: ShaderBackend.PubSub},
       # Start the Finch HTTP client for sending emails
