@@ -48,5 +48,5 @@ ENV LANG=en_US.UTF-8 \
     PHX_SERVER=true \
     PORT=${PORT}
 
-# Start the application
-CMD ["sh", "-c", "echo '=== Starting Application ===' && echo 'Environment variables:' && env | grep -E '(PORT|MIX_ENV|PHX_SERVER|SECRET_KEY_BASE)' && echo '=== Starting shader_backend ===' && ./bin/shader_backend start 2>&1"]
+# Start the application with explicit environment variables
+CMD ["sh", "-c", "echo '=== Starting Application ===' && echo 'Environment variables:' && env | grep -E '(PORT|MIX_ENV|PHX_SERVER|SECRET_KEY_BASE)' && echo '=== Starting shader_backend ===' && SECRET_KEY_BASE=${SECRET_KEY_BASE} PHX_HOST=${PHX_HOST} PORT=${PORT} ./bin/shader_backend start 2>&1"]
