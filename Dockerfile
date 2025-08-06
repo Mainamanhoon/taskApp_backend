@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 
-FROM hexpm/elixir:1.14.5-erlang-26.2.1-alpine-3.18.0 as build
+FROM hexpm/elixir:1.15.8-erlang-26.2.5.14-alpine-3.21.4 as build
 
 # install build dependencies
 RUN apk add --no-cache build-base npm git
@@ -35,7 +35,7 @@ RUN mix compile
 RUN mix release
 
 # app image
-FROM alpine:3.18.0 as app
+FROM alpine:3.21.4 as app
 
 RUN apk add --no-cache libstdc++ openssl ncurses-libs
 
