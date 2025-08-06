@@ -1,1 +1,1 @@
-web: PHX_SERVER=true MIX_ENV=prod mix phx.server
+web: _build/prod/rel/shader_backend/bin/shader_backend start
