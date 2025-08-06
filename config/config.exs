@@ -7,10 +7,6 @@
 # General application configuration
 import Config
 
-config :shader_backend,
-  ecto_repos: [ShaderBackend.Repo],
-  generators: [timestamp_type: :utc_datetime]
-
 # Configures the endpoint
 config :shader_backend, ShaderBackendWeb.Endpoint,
   url: [host: "localhost"],
