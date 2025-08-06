@@ -1,0 +1,26 @@
+# dual-interface-app/backend/nixpacks.toml  ← place it beside mix.exs
+[variables]
+MIX_ENV = 'prod'
+
+[phases.setup]              # System packages that Nixpacks must install
+nixPkgs = [
+  'elixir',                 # <- missing! installs Mix, Hex, etc.
+  'erlang',                 # BEAM VM
+  'nodejs'                  # only if you use esbuild/Tailwind assets
+]
+
+[phases.install]
+cmds = [
+  'mix local.hex --force',
+  'mix local.rebar --force',
+  'mix deps.get --only prod'
+]
+
+[phases.build]
+cmds = [
+  'mix compile',
+  'mix assets.deploy'       # Phoenix ≥1.7; remove if not using it
+]
+
+[start]
+cmd = 'mix ecto.setup && mix phx.server'
