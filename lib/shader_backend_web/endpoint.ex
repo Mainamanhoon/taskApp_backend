@@ -45,14 +45,4 @@ defmodule ShaderBackendWeb.Endpoint do
     Logger.info("Initializing endpoint with config: #{inspect(config)}")
     {:ok, config}
   end
-
-  def start_link(opts) do
-    Logger.info("Starting endpoint...")
-    result = super(opts)
-    case result do
-      {:ok, pid} -> Logger.info("Endpoint started successfully")
-      {:error, reason} -> Logger.error("Failed to start endpoint: #{inspect(reason)}")
-    end
-    result
-  end
 end
