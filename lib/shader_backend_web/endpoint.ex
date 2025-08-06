@@ -1,9 +1,14 @@
 defmodule ShaderBackendWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :shader_backend
 
-  # ---- CORS (React dev server) ----
+  # ---- CORS configuration ----
+  origins = case System.get_env("MIX_ENV") do
+    "prod" -> ["*"]  # Allow all origins in production
+    _ -> ["http://localhost:5173"]  # Only localhost in development
+  end
+
   plug CORSPlug,
-    origin: ["http://localhost:5173"],
+    origin: origins,
     methods: ["GET", "POST"]
 
   # ---- Static assets (none, but keep default plug) ----
