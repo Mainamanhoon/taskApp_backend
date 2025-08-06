@@ -20,7 +20,7 @@
 /priv/static/cache_manifest.json
 
 # Ignore the default configuration file.
-/config/runtime.exs
+ 
 /config/example.env
 
 # Environment variables
