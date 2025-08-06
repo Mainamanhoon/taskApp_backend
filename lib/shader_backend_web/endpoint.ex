@@ -39,4 +39,20 @@ defmodule ShaderBackendWeb.Endpoint do
   # no sessions needed for pure API
 
   plug ShaderBackendWeb.Router
+
+  # Add startup logging
+  def init(_key, config) do
+    Logger.info("Initializing endpoint with config: #{inspect(config)}")
+    {:ok, config}
+  end
+
+  def start_link(opts) do
+    Logger.info("Starting endpoint...")
+    result = super(opts)
+    case result do
+      {:ok, pid} -> Logger.info("Endpoint started successfully")
+      {:error, reason} -> Logger.error("Failed to start endpoint: #{inspect(reason)}")
+    end
+    result
+  end
 end
