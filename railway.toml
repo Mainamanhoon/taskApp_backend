@@ -1,0 +1,7 @@
+[build]
+builder = "railpack"
+
+[deploy]
+startCommand = "PHX_SERVER=true MIX_ENV=prod mix phx.server"
+restartPolicyType = "on_failure"
+restartPolicyMaxRetries = 10
