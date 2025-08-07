@@ -108,10 +108,8 @@ for generating GLSL code for shader using propmpt in the payload and getting GLS
 
 3. **Return JSON** with the cleaned shader code.
 
----
  
  
----
 
  
 
