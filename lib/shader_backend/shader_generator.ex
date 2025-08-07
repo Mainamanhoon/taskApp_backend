@@ -86,7 +86,7 @@ Create a shader that matches the user's description precisely and behaves realis
         ],
         generationConfig: %{
           maxOutputTokens: 1500,
-          temperature: 0.8
+          temperature: 0.6
         }
       }
       |> Jason.encode!()
