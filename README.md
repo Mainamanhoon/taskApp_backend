@@ -6,22 +6,18 @@
  
 ---
 
-## Quick Start
+ 
+ 
 
-### 1) Prerequisites
-
-* Erlang/OTP & Elixir installed (Elixir ≥ 1.16 recommended)
-* A **Google Gemini** API key
-
-### 2) Clone & install deps
+###  Clone & install deps
 
 ```bash
-git clone https://github.com/<your-org>/<your-repo>.git
-cd <your-repo>/backend
+git clone https://github.com/Mainamanhoon/taskApp_backend.git
+cd backend
 mix deps.get
 ```
 
-### 3) Configure environment
+###  Configure environment
 
 Use the provided example and set your key:
 
@@ -113,14 +109,7 @@ for generating GLSL code for shader using propmpt in the payload and getting GLS
 3. **Return JSON** with the cleaned shader code.
 
 ---
-
-## Configuration
-
-* **CORS**: Enabled via `cors_plug` for browser clients.
-* **HTTP client**: `Finch` (pooled, efficient).
-* **JSON**: `Jason`.
-* **Port**: Uses `PORT` env var (Phoenix defaults to **4000** in dev).
---- 
+ 
  
 ---
 
@@ -133,4 +122,4 @@ for generating GLSL code for shader using propmpt in the payload and getting GLS
  
 
 
-I hope you enjoy exploring and experimenting with this application\! If you have any questions or suggestions, feel free to open an issue or pull request. XD!
+ 
