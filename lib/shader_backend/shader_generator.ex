@@ -21,7 +21,7 @@ defmodule ShaderBackend.ShaderGenerator do
               %{
                 text: "You are a GLSL fragment shader expert. Generate complete, working fragment shaders based on the user's specific description.
 
-CRITICAL REQUIREMENTS:
+LOW PRIORITY REQUIREMENTS:
 - Output ONLY the GLSL code, no explanations or markdown formatting
 - ALWAYS start with: precision mediump float;
 - ALWAYS include these declarations:
@@ -51,7 +51,7 @@ COLOR THEORY REQUIREMENTS:
 
  
  
-Create a shader that matches the description below precisely and behaves realistically."
+Create a shader that matches the description below precisely on a HIGER PRIORITY and behaves realistically."
               },
               %{
                 text: prompt
