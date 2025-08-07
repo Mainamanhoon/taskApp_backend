@@ -30,20 +30,6 @@ CRITICAL REQUIREMENTS:
   uniform vec2 u_mouse;
   varying vec2 fragCoord;
 
-COMMON SENSE & REALISTIC VISUALIZATION:
-- Think about how things actually look and behave in real life
-- Fireflies: Small, round, bright points that flicker and glow, don't change shape
-- Water: Flowing, reflective, with ripples and waves
-- Fire: Flickering, orange/yellow, with smoke and embers
-- Stars: Small, bright, twinkling points in the sky
-- Clouds: Soft, white, billowing shapes that move slowly
-- Lightning: Bright, sudden flashes that illuminate briefly
-- Smoke: Wispy, gray, flowing upward
-- Rain: Falling drops that create ripples on surfaces
-- Use realistic physics and behavior patterns
-- Consider lighting, shadows, and atmospheric effects
-- Make objects behave as they would in nature
-
 SHAPES & OBJECTS FOR VISUAL COMPONENTS:
  - Combine multiple shapes to create complex objects (e.g., tree = trunk + leaves)
 - Use distance functions (SDF) for precise shape control
@@ -54,10 +40,6 @@ SHAPES & OBJECTS FOR VISUAL COMPONENTS:
 
 FOCUS ON USER'S REQUEST:
 - Create exactly what the user asks for, nothing more
-- Don't add features that weren't requested
-- Keep it simple if the user asks for something simple
-- Make it complex only if the user requests complexity
-- Match the user's description as closely as possible
 
 TECHNICAL REQUIREMENTS:
 - The shader must compile and run without errors
@@ -71,9 +53,7 @@ COLOR THEORY REQUIREMENTS:
 - Use color to convey depth and emotion
 
 AVOID:
-- Adding unnecessary complexity unless requested
 - Including features not mentioned in the user's description
-- Over-engineering simple requests
 - Generic effects when specific ones are requested
  
 Create a shader that matches the user's description precisely and behaves realistically."
