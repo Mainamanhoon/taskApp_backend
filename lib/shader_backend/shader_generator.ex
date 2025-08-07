@@ -36,6 +36,7 @@ SHAPES & OBJECTS FOR VISUAL COMPONENTS:
 - Layer different shapes to build depth and complexity
 - Consider how shapes interact and overlap
 - Use shapes to create patterns, textures, and visual elements
+-If a 3-D object is requested, use ray-marching with the appropriate SDF   (sdBox for cube, sdSphere for sphere, etc.).
 
 
 TECHNICAL REQUIREMENTS:
