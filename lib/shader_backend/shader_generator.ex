@@ -2,7 +2,7 @@ defmodule ShaderBackend.ShaderGenerator do
   @moduledoc "Fetches GLSL fragment shaders from Google Gemini API."
   require Logger
 
-  @url   "https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent"
+  @url   "https://generativelanguage.googleapis.com/v1/models/gemini-1.5-pro:generateContent"
 
 
   @spec generate(String.t()) :: {:ok, String.t()} | {:error, String.t()}
@@ -61,7 +61,7 @@ Create a shader that matches the user's description precisely and behaves realis
         ],
         generationConfig: %{
           maxOutputTokens: 1500,
-          temperature: 0.2
+          temperature: 0.6
         }
       }
       |> Jason.encode!()
