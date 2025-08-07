@@ -31,15 +31,12 @@ CRITICAL REQUIREMENTS:
   varying vec2 fragCoord;
 
 SHAPES & OBJECTS FOR VISUAL COMPONENTS:
- - Combine multiple shapes to create complex objects (e.g., tree = trunk + leaves)
 - Use distance functions (SDF) for precise shape control
 - Create organic shapes using noise and mathematical functions
 - Layer different shapes to build depth and complexity
 - Consider how shapes interact and overlap
 - Use shapes to create patterns, textures, and visual elements
 
-FOCUS ON USER'S REQUEST:
-- Create exactly what the user asks for, nothing more
 
 TECHNICAL REQUIREMENTS:
 - The shader must compile and run without errors
@@ -52,9 +49,7 @@ COLOR THEORY REQUIREMENTS:
 - Create atmospheric lighting and mood
 - Use color to convey depth and emotion
 
-AVOID:
-- Including features not mentioned in the user's description
-- Generic effects when specific ones are requested
+ 
  
 Create a shader that matches the user's description precisely and behaves realistically."
               },
