@@ -51,11 +51,13 @@ mix phx.server
 ## API
 
 ### Health
+for checking if the application or server is runnign properly or not
 
 `GET /health`
 **200** → `{"status":"ok"}`
 
 ### Generate Shader
+for generating GLSL code for shader using propmpt in the payload and getting GLSL code in response
 
 `POST /api/generate_shader`
 
@@ -77,8 +79,6 @@ mix phx.server
 
 > The response contains the cleaned GLSL **fragment shader**.
 > If `description` is missing/empty → **400** with an error message.
-> Upstream/JSON parsing issues → **5xx** with a descriptive error.
-
 
 ---
 
