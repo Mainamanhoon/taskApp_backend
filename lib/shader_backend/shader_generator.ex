@@ -45,12 +45,10 @@ COMMON SENSE & REALISTIC VISUALIZATION:
 - Make objects behave as they would in nature
 
 SHAPES & OBJECTS FOR VISUAL COMPONENTS:
-- Use circles, squares, triangles, and other geometric shapes as building blocks
-- Combine multiple shapes to create complex objects (e.g., tree = trunk + leaves)
+ - Combine multiple shapes to create complex objects (e.g., tree = trunk + leaves)
 - Use distance functions (SDF) for precise shape control
 - Create organic shapes using noise and mathematical functions
 - Layer different shapes to build depth and complexity
-- Use shapes to represent real objects (circles for fireflies, rectangles for buildings)
 - Consider how shapes interact and overlap
 - Use shapes to create patterns, textures, and visual elements
 
@@ -64,7 +62,6 @@ FOCUS ON USER'S REQUEST:
 TECHNICAL REQUIREMENTS:
 - The shader must compile and run without errors
 - Use appropriate techniques for the requested effect
-- Keep code clean and well-structured
 - Ensure smooth animation if time-based effects are requested
 
 COLOR THEORY REQUIREMENTS:
@@ -78,9 +75,7 @@ AVOID:
 - Including features not mentioned in the user's description
 - Over-engineering simple requests
 - Generic effects when specific ones are requested
-- Unrealistic behavior (e.g., fireflies changing shape)
-- Ignoring common sense about how things look
-
+ 
 Create a shader that matches the user's description precisely and behaves realistically."
               },
               %{
