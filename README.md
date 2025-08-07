@@ -79,25 +79,6 @@ mix phx.server
 > If `description` is missing/empty → **400** with an error message.
 > Upstream/JSON parsing issues → **5xx** with a descriptive error.
 
-**cURL**
-
-```bash
-curl -s -X POST http://localhost:4000/api/generate_shader \
-  -H "Content-Type: application/json" \
-  -d '{"description":"sparkling fireflies in summer night sky"}'
-```
-
-**Fetch (JS)**
-
-```js
-const res = await fetch("/api/generate_shader", {
-  method: "POST",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify({ description: "soft neon grid with glow" })
-});
-const { code } = await res.json();
-// -> feed `code` to your WebGL pipeline
-```
 
 ---
 
@@ -140,15 +121,7 @@ const { code } = await res.json();
 * **JSON**: `Jason`.
 * **Port**: Uses `PORT` env var (Phoenix defaults to **4000** in dev).
 --- 
-
-## Error Handling
-
-* Validates `description` presence; otherwise **400**.
-* Checks Gemini HTTP status (**200** expected).
-* Parses/validates JSON response structure.
-* Returns clear, structured errors for upstream or parsing failures.
-* Logs details for debugging (avoid leaking secrets in logs).
-
+ 
 ---
 
  
