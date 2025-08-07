@@ -1,28 +1,9 @@
  
 #   Backend (Phoenix) — Text-to-GLSL API
 
-> Phoenix/Elixir backend that turns natural-language descriptions into **clean, working GLSL fragment shaders** via the Google **Gemini** API, then auto-fixes common issues so the code is ready to render.
+> Phoenix/Elixir backend that turns prompts into **clean, working GLSL fragment shaders** via the Google **Gemini** API, then auto-fixes common issues so the code is ready to render.
 
  
----
-
-## Features
-
-* **AI-powered shader generation** (Google Gemini)
-* **Smart code fixing pipeline**
-
-  * Ensures `precision mediump float;`
-  * Adds missing uniforms: `u_time`, `u_resolution`, `u_mouse`
-  * Ensures `varying vec2 fragCoord;`
-  * Injects commonly used helpers (SDF, noise, rotation) when referenced but undefined
-  * Strips markdown formatting/`fences`
-* **Production-ready Phoenix app**
-
-  * CORS configured
-  * Health endpoint
-  * Robust error handling & logging
-* **High-performance & concurrent** (OTP/BEAM)
-
 ---
 
 ## Quick Start
@@ -158,71 +139,7 @@ const { code } = await res.json();
 * **HTTP client**: `Finch` (pooled, efficient).
 * **JSON**: `Jason`.
 * **Port**: Uses `PORT` env var (Phoenix defaults to **4000** in dev).
-
----
-
-## Project Structure
-
-```
-backend/
-├─ config/
-├─ lib/
-│  ├─ shader_backend/
-│  │  ├─ application.ex
-│  │  └─ shader_generator.ex
-│  ├─ shader_backend_web/
-│  │  ├─ controllers/
-│  │  │  ├─ health_controller.ex
-│  │  │  └─ shader_controller.ex
-│  │  ├─ endpoint.ex
-│  │  └─ router.ex
-│  ├─ shader_backend.ex
-│  └─ shader_backend_web.ex
-├─ priv/
-├─ test/
-├─ example.env
-├─ nixpacks.toml
-├─ mix.exs
-└─ README.md
-```
-
----
-
-## Development
-
-**Run in dev**
-
-```bash
-mix phx.server
-```
-
-**Tests**
-
-```bash
-mix test
-```
-
-**Formatting & lint**
-
-```bash
-mix format
-```
-
----
-
-## Deployment
-
-This project includes **Nixpacks** config for containerized deploys.
-
-* Ensure these env vars in your host/platform:
-
-  * `GEMINI_API_KEY` (required)
-  * `SECRET_KEY_BASE` (use `mix phx.gen.secret`)
-  * `PHX_HOST` (e.g., `api.example.com`)
-  * `PORT` (container port you expose)
-* Build & run with your platform’s Nixpacks integration (e.g., Railway, Fly, Render).
-
----
+--- 
 
 ## Error Handling
 
