@@ -51,7 +51,7 @@ COLOR THEORY REQUIREMENTS:
 
  
  
-Create a shader that matches the user's description precisely and behaves realistically."
+Create a shader that matches the description below precisely and behaves realistically."
               },
               %{
                 text: prompt
